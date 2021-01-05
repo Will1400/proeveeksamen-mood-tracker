@@ -6,8 +6,9 @@
 				class="form-control w-full"
 				type="text"
 				name="title"
+				required
 				placeholder="Klarede opvasken 💪"
-				v-model="title"
+				v-model.trim="title"
 			/>
 		</div>
 		<div class="my-10">
@@ -76,9 +77,10 @@
 				name="description"
 				id="description"
 				rows="5"
+				required
 				placeholder="Kunne ikke overskue at vaske op hele sidste uge. Havde et kæmpe bjerg og gemte mig mest under dynen. I dag havde jeg bare ekstra energi. Måske var det fordi jeg fik snakket med Niels om vores aftale i næste uge."
 				class="form-control w-full"
-				v-model="description"
+				v-model.trim="description"
 			></textarea>
 		</div>
 		<div class="flex w-full flex-row-reverse mt-10">
@@ -98,7 +100,7 @@ export default {
 	data() {
 		return {
 			title: "",
-			rating: 0,
+			rating: 3,
 			description: "",
 		};
 	},

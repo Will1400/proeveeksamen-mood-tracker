@@ -1,8 +1,9 @@
 <template>
 	<div class="">
 		<episode-list></episode-list>
-		<div class="absolute right-5 bottom-5">
+		<div class="fixed right-5 bottom-5">
 			<button
+				@click="addResource"
 				class="rounded-full h-20 w-20 flex items-center justify-center bg-green-800 text-green-50"
 			>
 				<svg
@@ -27,5 +28,10 @@
 import EpisodeList from "../components/episode/EpisodeList.vue";
 export default {
 	components: { EpisodeList },
+	methods: {
+		addResource() {
+			this.$router.replace({ name: "episodeAdd" });
+		},
+	},
 };
 </script>
