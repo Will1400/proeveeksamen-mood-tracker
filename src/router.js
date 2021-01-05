@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import EpisodeOverview from "./pages/EpisodeOverview.vue";
+import EpisodeAdd from "./pages/EpisodeAdd.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -9,11 +10,11 @@ const router = createRouter({
 			path: "/",
 			name: "Home",
 			component: EpisodeOverview,
-			children: [
-				{
-					path: "/add",
-				},
-			],
+		},
+		{
+			path: "/add",
+			name: "EpisodeAdd",
+			component: EpisodeAdd,
 		},
 	],
 });
