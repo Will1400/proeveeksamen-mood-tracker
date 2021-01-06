@@ -159,8 +159,4 @@ export default {
 .ratings .active {
 	@apply text-yellow-400;
 }
-
-.form-control {
-	@apply p-2 rounded-sm border-gray-300 text-gray-600 border-solid border-2 focus:outline-none focus:border-yellow-500 transition-colors;
-}
 </style>

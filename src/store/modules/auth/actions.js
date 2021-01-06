@@ -8,14 +8,14 @@ export default {
 	async signup(context, payload) {
 		return context.dispatch("auth", {
 			...payload,
-			mode: "login",
+			mode: "signup",
 		});
 	},
 	async auth(context, payload) {
 		let url =
 			payload.mode === "login"
-				? "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key="
-				: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDvGDtjY3NGQ9x-NuVGqp_k3Oxva91ZP74";
+				? "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDYDbWtD9TZ6M94OJMMRtUYbZGB5Czel-o"
+				: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDYDbWtD9TZ6M94OJMMRtUYbZGB5Czel-o";
 		const response = await fetch(url, {
 			method: "POST",
 			body: JSON.stringify({
