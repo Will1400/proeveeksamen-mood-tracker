@@ -26,10 +26,10 @@
 		<div>
 			<h1 class="text-center text-xl">Login to access your episodes</h1>
 		</div>
-		<div class="w-full mt-10">
+		<div class="w-full mt-10 flex justify-center">
 			<button
 				@click.prevent="goToAuth"
-				class="focus:outline-none w-full bg-green-500 px-10 py-2 rounded-sm text-gray-50"
+				class="focus:outline-none bg-green-500 w-full md:w-3/4 px-10 py-2 rounded-sm text-gray-50 btn-click-scale"
 			>
 				Login
 			</button>

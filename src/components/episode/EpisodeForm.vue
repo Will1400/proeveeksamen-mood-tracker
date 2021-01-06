@@ -113,10 +113,10 @@
 				v-model.trim="description"
 			></textarea>
 		</div>
-		<div class="flex w-full flex-row-reverse mt-10">
+		<div class="flex md:block w-full flex-row-reverse mt-10">
 			<button
 				type="submit"
-				class="bg-green-800 text-gray-300 py-2 px-4 rounded-md justify-self-end focus:outline-none hover:bg-green-700 transition-colors"
+				class="bg-green-800 text-gray-300 py-2 px-4 rounded-md justify-self-end focus:outline-none hover:bg-green-700 btn-click-scale"
 			>
 				Gem
 			</button>

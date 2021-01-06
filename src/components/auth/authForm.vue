@@ -25,13 +25,13 @@
 		<div class="flex justify-between mt-10">
 			<button
 				type="submit"
-				class="focus:outline-none bg-green-500 px-4 py-2 rounded-sm text-gray-50"
+				class="focus:outline-none bg-green-500 px-4 py-2 rounded-sm text-gray-50 btn-click-scale"
 			>
 				{{ submitButtonCaption }}
 			</button>
 			<button
 				@click.prevent="switchAuthMode"
-				class="focus:outline-none px-4 py-2 rounded-sm border-solid border-2 border-green-400"
+				class="focus:outline-none px-4 py-2 rounded-sm border-solid border-2 border-green-400 hover:bg-green-400 hover:text-white btn-click-scale"
 			>
 				{{ switchModeButtonCaption }}
 			</button>
