@@ -15,7 +15,9 @@
 			<h2>Hvordan har du det?</h2>
 			<div class="flex gap-4 justify-between px-1">
 				<div>
-					<label for="rating--1">1</label>
+					<label for="rating--1" class="cursor-pointer text-red-500">
+						<base-emoji classes="w-10 h-10 " emoji="1"></base-emoji>
+					</label>
 					<input
 						type="radio"
 						name="rating"
@@ -26,7 +28,9 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--2">2</label>
+					<label for="rating--2 " class="cursor-pointer text-red-400">
+						<base-emoji classes="w-10 h-10" emoji="2"></base-emoji>
+					</label>
 					<input
 						type="radio"
 						name="rating"
@@ -37,7 +41,12 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--3">3</label>
+					<label for="rating--3" class="cursor-pointer"
+						><base-emoji
+							classes="w-10 h-10 text-yellow-400 "
+							emoji="3"
+						></base-emoji
+					></label>
 					<input
 						type="radio"
 						name="rating"
@@ -48,7 +57,12 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--4">4</label>
+					<label for="rating--4" class="cursor-pointer"
+						><base-emoji
+							classes="w-10 h-10 text-yellow-400 "
+							emoji="4"
+						></base-emoji>
+					</label>
 					<input
 						type="radio"
 						name="rating"
@@ -59,7 +73,12 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--5">5</label>
+					<label for="rating--5" class="cursor-pointer"
+						><base-emoji
+							classes="w-10 h-10 text-yellow-400 "
+							emoji="5"
+						></base-emoji
+					></label>
 					<input
 						type="radio"
 						name="rating"
