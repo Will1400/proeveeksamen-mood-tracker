@@ -13,10 +13,16 @@
 		</div>
 		<div class="my-10">
 			<h2>Hvordan har du det?</h2>
-			<div class="flex gap-4 justify-between px-1">
+			<div
+				class="ratings flex gap-4 justify-between px-1 mt-5 text-gray-300"
+			>
 				<div>
-					<label for="rating--1" class="cursor-pointer text-red-500">
-						<base-emoji classes="w-10 h-10 " emoji="1"></base-emoji>
+					<label
+						for="rating--1"
+						class="cursor-pointer hover:text-red-500 transition-colors"
+						:class="{ active: rating == 1 }"
+					>
+						<base-emoji classes="w-10 h-10" emoji="1"></base-emoji>
 					</label>
 					<input
 						type="radio"
@@ -28,7 +34,11 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--2 " class="cursor-pointer text-red-400">
+					<label
+						for="rating--2"
+						class="cursor-pointer hover:text-red-400 transition-colors"
+						:class="{ active: rating == 2 }"
+					>
 						<base-emoji classes="w-10 h-10" emoji="2"></base-emoji>
 					</label>
 					<input
@@ -41,11 +51,11 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--3" class="cursor-pointer"
-						><base-emoji
-							classes="w-10 h-10 text-yellow-400 "
-							emoji="3"
-						></base-emoji
+					<label
+						for="rating--3"
+						class="cursor-pointer hover:text-yellow-400 transition-colors"
+						:class="{ active: rating == 3 }"
+						><base-emoji classes="w-10 h-10" emoji="3"></base-emoji
 					></label>
 					<input
 						type="radio"
@@ -57,11 +67,11 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--4" class="cursor-pointer"
-						><base-emoji
-							classes="w-10 h-10 text-yellow-400 "
-							emoji="4"
-						></base-emoji>
+					<label
+						for="rating--4"
+						class="cursor-pointer hover:text-yellow-400 transition-colors"
+						:class="{ active: rating == 4 }"
+						><base-emoji classes="w-10 h-10" emoji="4"></base-emoji>
 					</label>
 					<input
 						type="radio"
@@ -73,13 +83,14 @@
 					/>
 				</div>
 				<div>
-					<label for="rating--5" class="cursor-pointer"
-						><base-emoji
-							classes="w-10 h-10 text-yellow-400 "
-							emoji="5"
-						></base-emoji
+					<label
+						for="rating--5"
+						class="cursor-pointer hover:text-yellow-400 transition-colors"
+						:class="{ active: rating == 5 }"
+						><base-emoji classes="w-10 h-10 " emoji="5"></base-emoji
 					></label>
 					<input
+						checked
 						type="radio"
 						name="rating"
 						id="rating--5"
@@ -119,7 +130,7 @@ export default {
 	data() {
 		return {
 			title: "",
-			rating: 3,
+			rating: 5,
 			description: "",
 		};
 	},
@@ -141,6 +152,10 @@ export default {
 </script>
 
 <style scoped>
+.ratings .active {
+	@apply text-yellow-400;
+}
+
 .form-control {
 	@apply p-2 rounded-sm border-gray-300 text-gray-600 border-solid border-2 focus:outline-none focus:border-yellow-500 transition-colors;
 }
