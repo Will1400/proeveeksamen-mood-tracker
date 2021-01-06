@@ -20,7 +20,7 @@
 			/>
 		</div>
 		<div>
-			<p>{{ error }}</p>
+			<p class="text-red-500">{{ error }}</p>
 		</div>
 		<div class="flex justify-between mt-10">
 			<button
@@ -41,6 +41,7 @@
 
 <script>
 export default {
+	name: "AuthForm",
 	emits: ["completed-auth"],
 	data() {
 		return {
@@ -61,6 +62,13 @@ export default {
 	},
 	methods: {
 		async submitData() {
+			this.error = null;
+
+			if (!email || !this.password) {
+				this.error = "Indtast en gyldig email og et password.";
+				return;
+			}
+
 			try {
 				const info = {
 					email: this.email,
