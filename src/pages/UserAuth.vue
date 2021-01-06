@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import authForm from "../components/auth/authForm.vue";
+import AuthForm from "../components/auth/AuthForm.vue";
 
 export default {
-	components: { authForm },
+	components: { AuthForm },
 	methods: {
 		async auth() {
 			this.$router.replace("/");
