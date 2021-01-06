@@ -1,5 +1,7 @@
 <template>
-	<auth-form @completed-auth="auth"></auth-form>
+	<div>
+		<auth-form @completed-auth="auth"></auth-form>
+	</div>
 </template>
 
 <script>

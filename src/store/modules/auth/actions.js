@@ -41,7 +41,7 @@ export default {
 
 		timer = setTimeout(() => {
 			context.dispatch("setAutoLogout");
-		}, data.expiresIn);
+		}, data.expiresIn * 1000);
 		context.commit("setUser", {
 			token: data.idToken,
 			userId: data.localId,
@@ -53,7 +53,7 @@ export default {
 		const tokenExpiration = localStorage.getItem("tokenExpiration");
 		const expiresIn = tokenExpiration - new Date().getTime();
 
-		if (expiresIn < 10000) {
+		if (expiresIn < 0) {
 			context.dispatch("logout");
 			return;
 		}

@@ -1,7 +1,7 @@
 <template>
 	<div v-if="isAuthenticated">
 		<episode-list></episode-list>
-		<div class="fixed right-5 bottom-5">
+		<div class="absolute right-5 bottom-5">
 			<button
 				@click="addResource"
 				class="rounded-full h-20 w-20 flex items-center justify-center bg-green-800 text-green-50"

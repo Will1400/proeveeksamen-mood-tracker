@@ -1,5 +1,7 @@
 <template>
-	<div class="rounded-md bg-white m-auto p-4">
+	<div
+		class="rounded-md bg-white m-auto p-4 shadow-md transform-gpu transition-all hover:shadow-xl hover:scale-101"
+	>
 		<div>
 			<h2 class="font-semibold">{{ title }}</h2>
 		</div>
@@ -7,7 +9,7 @@
 			<p class="text-gray-500">{{ date }}</p>
 		</div>
 		<div>
-			<p class="overflow-ellipsis overflow-hidden break-words">
+			<p class="overflow-ellipsis overflow-hidden max-h-16">
 				{{ description }}
 			</p>
 		</div>
