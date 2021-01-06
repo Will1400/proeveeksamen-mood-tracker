@@ -1,5 +1,5 @@
 <template>
-	<div class="">
+	<div>
 		<episode-list></episode-list>
 		<div class="fixed right-5 bottom-5">
 			<button
