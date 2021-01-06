@@ -1,7 +1,7 @@
 <template>
 	<form @submit.prevent="submitData" class="w-full p-4">
 		<div>
-			<label for="title" class="text-lg">Title</label>
+			<label for="title" class="text-lg">Titel</label>
 			<input
 				class="form-control w-full"
 				type="text"
