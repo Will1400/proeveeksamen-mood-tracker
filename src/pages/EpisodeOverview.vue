@@ -2,7 +2,7 @@
 	<div v-if="isAuthenticated">
 		<episode-list></episode-list>
 		<div
-			class="fixed right-5 bottom-5 sm:block sm:right-auto sm:ml-4 sm:w-full sm:bottom-auto"
+			class="fixed right-5 bottom-5 sm:block sm:right-auto sm:ml-4 sm:mt-5 sm:w-full sm:bottom-auto"
 		>
 			<button
 				@click="addResource"

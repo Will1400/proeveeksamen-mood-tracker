@@ -4,13 +4,15 @@
 			class="container flex justify-between items-center m-auto px-4"
 		>
 			<div>
-				<h1 class="text-2xl text-center">Mood Tracker</h1>
+				<router-link :to="{ name: 'episodes' }">
+					<h1 class="text-2xl text-center">Mood Tracker</h1>
+				</router-link>
 			</div>
 			<div>
 				<button
 					@click="logout"
 					v-if="isAuthenticated"
-					class="flex items-center"
+					class="flex items-center transition-all px-2 rounded-sm focus:outline-none border-b-2 border-transparent hover:border-yellow-400"
 				>
 					logout
 				</button>
