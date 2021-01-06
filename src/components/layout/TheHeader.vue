@@ -12,7 +12,7 @@
 				<button
 					@click="logout"
 					v-if="isAuthenticated"
-					class="flex items-center transition-all px-2 rounded-sm focus:outline-none border-b-2 border-transparent hover:border-yellow-400"
+					class="flex items-center transition-all px-2 rounded-sm focus:outline-none border-b-2 pt-1 border-transparent hover:border-yellow-400"
 				>
 					logout
 				</button>
