@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="isAuthenticated">
 		<episode-list></episode-list>
 		<div class="fixed right-5 bottom-5">
 			<button
@@ -22,9 +22,23 @@
 			</button>
 		</div>
 	</div>
+	<div v-else class="p-4 w-full">
+		<div>
+			<h1 class="text-center text-xl">Login to access your episodes</h1>
+		</div>
+		<div class="w-full mt-10">
+			<button
+				@click.prevent="goToAuth"
+				class="focus:outline-none w-full bg-green-500 px-10 py-2 rounded-sm text-gray-50"
+			>
+				Login
+			</button>
+		</div>
+	</div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import EpisodeList from "../components/episode/EpisodeList.vue";
 export default {
 	components: { EpisodeList },
@@ -32,9 +46,15 @@ export default {
 		addResource() {
 			this.$router.replace({ name: "episodeAdd" });
 		},
+		goToAuth() {
+			this.$router.push({ name: "auth" });
+		},
+	},
+	computed: {
+		...mapGetters(["isAuthenticated"]),
 	},
 	created() {
-		if (this.$store.getters.isAuthenticated) {
+		if (this.isAuthenticated) {
 			this.$store.dispatch("loadEpisodes");
 		}
 	},
