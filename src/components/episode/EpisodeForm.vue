@@ -136,11 +136,15 @@ export default {
 	},
 	methods: {
 		submitData() {
+			const date = new Date();
 			this.$emit("episode-create", {
-				id: new Date().toISOString(),
+				id: date.toISOString(),
 				title: this.title,
 				rating: this.rating,
-				date: new Date().toISOString(),
+				date:
+					date.toLocaleDateString() +
+					" kl " +
+					date.toLocaleTimeString(),
 				description: this.description,
 			});
 		},
