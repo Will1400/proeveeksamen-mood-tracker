@@ -1,10 +1,12 @@
 <template>
 	<div v-if="isAuthenticated">
 		<episode-list></episode-list>
-		<div class="absolute right-5 bottom-5">
+		<div
+			class="fixed right-5 bottom-5 sm:block sm:right-auto sm:ml-4 sm:w-full sm:bottom-auto"
+		>
 			<button
 				@click="addResource"
-				class="rounded-full h-20 w-20 flex items-center justify-center bg-green-800 text-green-50"
+				class="rounded-full h-20 w-20 flex items-center justify-center transition-colors bg-green-800 text-green-50 hover:bg-green-600"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +26,9 @@
 	</div>
 	<div v-else class="p-4 w-full">
 		<div>
-			<h1 class="text-center text-xl">Login to access your episodes</h1>
+			<h1 class="text-center text-xl">
+				Login for at få adgang til dine episoder
+			</h1>
 		</div>
 		<div class="w-full mt-10 flex justify-center">
 			<button

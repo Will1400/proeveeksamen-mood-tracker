@@ -1,15 +1,17 @@
 <template>
 	<div class="bg-green-100 min-h-screen">
-		<div class="container lg:pt-28 m-auto relative min-h-screen">
+		<the-header></the-header>
+		<div class="container lg:pt-20 m-auto relative">
 			<router-view></router-view>
 		</div>
 	</div>
 </template>
 
 <script>
+import TheHeader from "./components/layout/TheHeader.vue";
 export default {
 	name: "App",
-	components: {},
+	components: { TheHeader },
 	mounted() {
 		this.$store.dispatch("autoLogin");
 	},
