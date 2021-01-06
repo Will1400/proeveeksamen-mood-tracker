@@ -7,7 +7,7 @@
 			<p class="text-gray-500">{{ date }}</p>
 		</div>
 		<div>
-			<p>
+			<p class="overflow-ellipsis overflow-hidden break-words">
 				{{ description }}
 			</p>
 		</div>
