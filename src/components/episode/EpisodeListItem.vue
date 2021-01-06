@@ -17,12 +17,13 @@
 
 <script>
 export default {
-	props: {
-		title: String,
-		date: String,
-		rating: Number,
-		description: String,
-	},
+	props: ["title", "date", "rating", "description"],
+	// props: {
+	// 	title: String,
+	// 	date: String,
+	// 	rating: Number,
+	// 	description: String,
+	// },
 };
 </script>
 

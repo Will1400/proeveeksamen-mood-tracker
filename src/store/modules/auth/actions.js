@@ -31,7 +31,6 @@ export default {
 			const error = new Error(data.messsage || "Failed to authenticate");
 			throw error;
 		}
-		console.log(data);
 
 		context.commit("setUser", {
 			token: data.idToken,

@@ -33,5 +33,10 @@ export default {
 			this.$router.replace({ name: "episodeAdd" });
 		},
 	},
+	created() {
+		if (this.$store.getters.isAuthenticated) {
+			this.$store.dispatch("loadEpisodes");
+		}
+	},
 };
 </script>
