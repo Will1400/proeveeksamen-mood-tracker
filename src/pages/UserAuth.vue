@@ -11,7 +11,9 @@ export default {
 	components: { AuthForm },
 	methods: {
 		async auth() {
-			this.$router.replace("/");
+			this.$router.replace({
+				name: this.$route.query.redirect || "episodes",
+			});
 		},
 	},
 };
