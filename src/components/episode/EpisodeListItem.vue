@@ -9,7 +9,7 @@
 			<p class="text-gray-500">{{ date }}</p>
 		</div>
 		<div>
-			<p class="overflow-ellipsis overflow-hidden max-h-16">
+			<p class="overflow-hidden overflow-ellipsis max-chars">
 				{{ description }}
 			</p>
 		</div>
@@ -35,4 +35,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.max-chars {
+	max-height: 6ch;
+}
+</style>

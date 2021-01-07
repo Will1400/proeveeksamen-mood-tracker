@@ -1,12 +1,12 @@
 <template>
-	<div class="container m-auto bg-white rounded-md shadow-lg p-4 md:w-10/12">
-		<div class="grid grid-cols-10 items-center">
-			<button @click="back" class="w-7 m-3">
+	<div class="container m-auto p-4 md:w-10/12">
+		<div class="flex justify-between items-center">
+			<button @click="back" class="w-7 m-3 ml-0">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
 					fill="currentColor"
-					class="p-1"
+					class=""
 				>
 					<path
 						fill-rule="evenodd"
@@ -15,14 +15,14 @@
 					/>
 				</svg>
 			</button>
-			<h2 class="text-center text-2xl col-span-8">
+			<h2 class="text-center text-2xl">
 				{{ episode.title }}
 			</h2>
 			<router-link
 				:to="{ name: 'episodeEdit', params: { id: episode.id } }"
 			>
 				<div
-					class="flex gap-2 border-b-2 border-transparent hover:border-yellow-400 justify-center transition-colors"
+					class="flex gap-2 border-b-2 pl-2 border-transparent hover:border-yellow-400 justify-center transition-colors"
 				>
 					<span>Edit</span>
 					<svg
@@ -38,6 +38,8 @@
 				</div>
 			</router-link>
 		</div>
+		<hr class="border-gray-400 relative -bottom-5" />
+
 		<div class="flex justify-between items-center">
 			<div
 				class="text-red-400"
@@ -47,6 +49,7 @@
 			</div>
 			<p class="text-gray-400 py-2">{{ episode.date }}</p>
 		</div>
+		<hr class="border-gray-400 relative bottom-6" />
 		<div>
 			<p class="break-words">{{ episode.description }}</p>
 		</div>
