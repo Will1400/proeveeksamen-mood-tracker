@@ -9,6 +9,8 @@
 				required
 				placeholder="Klarede opvasken 💪"
 				v-model.trim="title"
+				autofocus
+				ref="titleInput"
 			/>
 		</div>
 		<div class="my-10">
@@ -19,7 +21,7 @@
 				<div>
 					<label
 						for="rating--1"
-						class="cursor-pointer hover:text-red-400 transition-colors"
+						class="cursor-pointer focus-within:text-red-400 hover:text-red-400 transition-colors"
 						:class="{ 'active--red': rating == 1 }"
 					>
 						<base-emoji classes="w-10 h-10" emoji="1"></base-emoji>
@@ -116,7 +118,7 @@
 		<div class="flex md:block w-full flex-row-reverse mt-10">
 			<button
 				type="submit"
-				class="bg-green-800 text-gray-300 py-2 px-4 rounded-md justify-self-end focus:outline-none hover:bg-green-700 btn-click-scale"
+				class="bg-green-800 text-gray-300 py-2 px-4 rounded-md justify-self-end focus:outline-none focus:bg-green-700 hover:bg-green-700 btn-click-scale"
 			>
 				Gem
 			</button>
@@ -163,6 +165,9 @@ export default {
 				this.description = this.episode.description;
 			}
 		},
+	},
+	mounted() {
+		this.$refs.titleInput.focus();
 	},
 };
 </script>

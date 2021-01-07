@@ -9,6 +9,8 @@
 				v-model.trim="email"
 				class="form-control w-full"
 				required
+				autofocus
+				ref="emailInput"
 			/>
 		</div>
 		<div class="mt-10">
@@ -91,6 +93,9 @@ export default {
 		switchAuthMode() {
 			this.mode = this.mode === "login" ? "signup" : "login";
 		},
+	},
+	mounted() {
+		this.$refs.emailInput.focus();
 	},
 };
 </script>
