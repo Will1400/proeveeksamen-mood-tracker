@@ -1,5 +1,5 @@
 <template>
-	<form @submit.prevent="submitData" class="w-full p-4">
+	<form @submit.prevent="submitData" class="w-full p-4 mx-auto">
 		<div>
 			<label for="title" class="text-lg">Titel</label>
 			<input
@@ -138,7 +138,6 @@ export default {
 		submitData() {
 			const date = new Date();
 			this.$emit("episode-create", {
-				id: date.toISOString(),
 				title: this.title,
 				rating: this.rating,
 				date:
