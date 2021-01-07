@@ -14,7 +14,7 @@
 				/>
 			</svg>
 		</button>
-		<episode-form @episode-create="createEpisode"></episode-form>
+		<episode-form @episode-submit="createEpisode"></episode-form>
 	</div>
 </template>
 

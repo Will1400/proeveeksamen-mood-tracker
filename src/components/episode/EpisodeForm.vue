@@ -19,8 +19,8 @@
 				<div>
 					<label
 						for="rating--1"
-						class="cursor-pointer hover:text-red-500 transition-colors"
-						:class="{ active: rating == 1 }"
+						class="cursor-pointer hover:text-red-400 transition-colors"
+						:class="{ 'active--red': rating == 1 }"
 					>
 						<base-emoji classes="w-10 h-10" emoji="1"></base-emoji>
 					</label>
@@ -37,7 +37,7 @@
 					<label
 						for="rating--2"
 						class="cursor-pointer hover:text-red-400 transition-colors"
-						:class="{ active: rating == 2 }"
+						:class="{ 'active--red': rating == 2 }"
 					>
 						<base-emoji classes="w-10 h-10" emoji="2"></base-emoji>
 					</label>
@@ -126,9 +126,11 @@
 
 <script>
 export default {
-	emits: ["episode-create", "cancel"],
+	props: ["episode"],
+	emits: ["episode-submit", "cancel"],
 	data() {
 		return {
+			id: null,
 			title: "",
 			rating: 5,
 			description: "",
@@ -137,7 +139,8 @@ export default {
 	methods: {
 		submitData() {
 			const date = new Date();
-			this.$emit("episode-create", {
+			this.$emit("episode-submit", {
+				id: this.id,
 				title: this.title,
 				rating: this.rating,
 				date:
@@ -151,11 +154,24 @@ export default {
 			this.$emit("cancel");
 		},
 	},
+	watch: {
+		episode(newValue, oldValue) {
+			if (this.episode) {
+				this.id = this.episode.id;
+				this.title = this.episode.title;
+				this.rating = this.episode.rating;
+				this.description = this.episode.description;
+			}
+		},
+	},
 };
 </script>
 
 <style scoped>
 .ratings .active {
 	@apply text-yellow-400;
+}
+.ratings .active--red {
+	@apply text-red-400;
 }
 </style>
