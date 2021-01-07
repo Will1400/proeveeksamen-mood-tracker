@@ -8,6 +8,7 @@
 				id="email"
 				v-model.trim="email"
 				class="form-control w-full"
+				required
 			/>
 		</div>
 		<div class="mt-10">
@@ -17,6 +18,7 @@
 				id="password"
 				v-model.trim="password"
 				class="form-control w-full"
+				required
 			/>
 		</div>
 		<div>
