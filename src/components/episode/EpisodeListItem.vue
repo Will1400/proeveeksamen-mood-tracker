@@ -13,7 +13,13 @@
 				{{ description }}
 			</p>
 		</div>
-		<div class="pt-1">Rating: {{ rating }}</div>
+		<div
+			class="text-red-400 pt-1"
+			:class="{ 'text-yellow-400': rating > 2 }"
+		>
+			<span class="text-black"> Rating: </span>
+			<base-emoji classes="w-7 h-7 inline" :emoji="rating"></base-emoji>
+		</div>
 	</div>
 </template>
 
