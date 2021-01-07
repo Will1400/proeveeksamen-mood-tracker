@@ -48,7 +48,7 @@ export default {
 	components: { EpisodeList },
 	methods: {
 		addResource() {
-			this.$router.replace({ name: "episodeAdd" });
+			this.$router.push({ name: "episodeAdd" });
 		},
 		goToAuth() {
 			this.$router.push({ name: "auth" });
