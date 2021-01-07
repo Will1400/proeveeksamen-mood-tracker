@@ -21,20 +21,23 @@
 			<router-link
 				:to="{ name: 'episodeEdit', params: { id: episode.id } }"
 			>
-			<div class="flex gap-2 border-b-2 border-transparent hover:border-yellow-400 justify-center transition-colors">
-				<span>Edit</span>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 20 20"
-					fill="currentColor"
-					class="w-5"
+				<div
+					class="flex gap-2 border-b-2 border-transparent hover:border-yellow-400 justify-center transition-colors"
 				>
-					<path
-						d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
-					/>
-				</svg>
+					<span>Edit</span>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 20 20"
+						fill="currentColor"
+						class="w-5"
+					>
+						<path
+							d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"
+						/>
+					</svg>
+				</div>
 			</router-link>
-			</div>
+		</div>
 		<div class="flex justify-between items-center">
 			<div
 				class="text-red-400"
@@ -47,7 +50,7 @@
 		<div>
 			<p class="break-words">{{ episode.description }}</p>
 		</div>
-		</div>
+	</div>
 </template>
 
 <script>

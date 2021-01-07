@@ -58,7 +58,7 @@ const router = createRouter({
 
 router.beforeEach(function (to, _, next) {
 	if (to.meta.requiresAuth && !store.getters.isAuthenticated) {
-		next("/auth?redirect=" + to.name);
+		next({ name: "auth", query: { redirect: to.name, id: to.params.id } });
 	} else if (to.meta.requiresUnAuth && store.getters.isAuthenticated) {
 		next({ name: "episodes" });
 	} else {
