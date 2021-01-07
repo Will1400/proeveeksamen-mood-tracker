@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import EpisodeOverview from "./pages/EpisodeOverview.vue";
-import EpisodeAdd from "./pages/EpisodeAdd.vue";
+import EpisodeOverview from "./pages/episode/EpisodeOverview.vue";
+import EpisodeAdd from "./pages/episode/EpisodeAdd.vue";
+import EpisodeSpecific from "./pages/episode/EpisodeSpecific.vue";
 import UserAuth from "./pages/UserAuth.vue";
 
 import store from "./store";
@@ -15,10 +16,20 @@ const router = createRouter({
 			component: EpisodeOverview,
 		},
 		{
-			path: "/add",
+			path: "/episodes/add",
 			name: "episodeAdd",
 			component: EpisodeAdd,
 			meta: { requiresAuth: true },
+		},
+		{
+			path: "/episodes/:id",
+			name: "episodeSpecific",
+			meta: { requiresAuth: true },
+			component: EpisodeSpecific,
+			children: [
+				{ path: "", name: "episodeDetails" },
+				{ path: "/edit", name: "episodeEdit" },
+			],
 		},
 		{
 			path: "/auth",

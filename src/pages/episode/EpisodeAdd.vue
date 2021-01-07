@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import EpisodeForm from "../components/episode/EpisodeForm.vue";
+import EpisodeForm from "/src/components/episode/EpisodeForm.vue";
 export default {
 	components: { EpisodeForm },
 	methods: {

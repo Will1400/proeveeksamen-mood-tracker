@@ -43,7 +43,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import EpisodeList from "../components/episode/EpisodeList.vue";
+import EpisodeList from "/src/components/episode/EpisodeList.vue";
 export default {
 	components: { EpisodeList },
 	methods: {
