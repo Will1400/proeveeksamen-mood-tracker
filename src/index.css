@@ -20,6 +20,6 @@
 	}
 
 	.btn-click-scale {
-		@apply transform-gpu transition-all hover:scale-105 hover:shadow-lg focus:shadow-md active:scale-95;
+		@apply transform-gpu transition-all hover:scale-105 focus:scale-105 hover:shadow-lg focus:shadow-md active:scale-100;
 	}
 }

@@ -33,7 +33,7 @@
 		<div class="w-full mt-10 flex justify-center">
 			<button
 				@click.prevent="goToAuth"
-				class="focus:outline-none bg-green-500 w-full md:w-3/4 px-10 py-2 rounded-sm text-gray-50 btn-click-scale"
+				class="focus:outline-none bg-green-500 w-full md:w-2/4 px-10 py-4 rounded-sm text-gray-50 btn-click-scale"
 			>
 				Login
 			</button>
