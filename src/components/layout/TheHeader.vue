@@ -14,7 +14,7 @@
 					v-if="isAuthenticated"
 					class="flex items-center transition-all px-2 rounded-sm focus:outline-none border-b-2 pt-1 border-transparent hover:border-yellow-400"
 				>
-					logout
+					log ud
 				</button>
 			</div>
 		</section>
