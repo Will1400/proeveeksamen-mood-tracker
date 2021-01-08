@@ -127,6 +127,8 @@
 </template>
 
 <script>
+import dayjs from "dayjs";
+
 export default {
 	props: ["episode"],
 	emits: ["episode-submit", "cancel"],
@@ -140,15 +142,11 @@ export default {
 	},
 	methods: {
 		submitData() {
-			const date = new Date();
 			this.$emit("episode-submit", {
 				id: this.id,
 				title: this.title,
 				rating: this.rating,
-				date:
-					date.toLocaleDateString() +
-					" kl " +
-					date.toLocaleTimeString(),
+				date: dayjs(),
 				description: this.description,
 			});
 		},
