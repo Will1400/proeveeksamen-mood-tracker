@@ -47,7 +47,7 @@
 			>
 				<base-emoji classes="w-10" :emoji="episode.rating"></base-emoji>
 			</div>
-			<p class="text-gray-400 py-2">{{ episode.date }}</p>
+			<p class="text-gray-400 py-2">{{ formattedDate }}</p>
 		</div>
 		<hr class="border-gray-400 relative bottom-6" />
 		<div>
@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import Dayjs from "dayjs";
+
 import { mapGetters } from "vuex";
 export default {
 	props: ["id"],
@@ -78,6 +80,9 @@ export default {
 			console.log(episode);
 
 			return episode;
+		},
+		formattedDate() {
+			return Dayjs(this.episode.date).format("D/M/YYYY hh:mm");
 		},
 	},
 	created() {

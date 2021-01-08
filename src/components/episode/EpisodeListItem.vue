@@ -6,7 +6,7 @@
 			<h2 class="font-semibold">{{ title }}</h2>
 		</div>
 		<div>
-			<p class="text-gray-500">{{ date }}</p>
+			<p class="text-gray-500">{{ dateFromNow() }}</p>
 		</div>
 		<div>
 			<p class="overflow-hidden overflow-ellipsis max-chars">
@@ -24,14 +24,20 @@
 </template>
 
 <script>
+import dayjs from "dayjs";
+import "dayjs/locale/da";
+import relativeTime from "dayjs/plugin/relativeTime";
+
+dayjs.locale("da");
+dayjs.extend(relativeTime);
+
 export default {
 	props: ["title", "date", "rating", "description"],
-	// props: {
-	// 	title: String,
-	// 	date: String,
-	// 	rating: Number,
-	// 	description: String,
-	// },
+	methods: {
+		dateFromNow() {
+			return dayjs().to(dayjs(this.date));
+		},
+	},
 };
 </script>
 
