@@ -7,6 +7,8 @@ import EpisodeDetails from "./pages/episode/EpisodeDetails.vue";
 import EpisodeEdit from "./pages/episode/EpisodeEdit.vue";
 import UserAuth from "./pages/UserAuth.vue";
 
+import NotFound from "./pages/NotFound.vue";
+
 import store from "./store";
 
 const router = createRouter({
@@ -58,6 +60,11 @@ const router = createRouter({
 			name: "auth",
 			component: UserAuth,
 			meta: { requiresUnAuth: true },
+		},
+		{
+			path: "/:notFound(.*)",
+			name: "notFound",
+			component: NotFound,
 		},
 	],
 });

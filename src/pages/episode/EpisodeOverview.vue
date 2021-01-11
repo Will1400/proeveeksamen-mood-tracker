@@ -1,5 +1,8 @@
 <template>
-	<div v-if="isAuthenticated">
+	<div v-if="isLoading" class="w-full">
+		<base-spinner classes="w-20 h-20 mx-auto"></base-spinner>
+	</div>
+	<div v-else-if="isAuthenticated">
 		<episode-list></episode-list>
 		<div
 			class="fixed sm:relative right-5 bottom-5 sm:block sm:right-auto sm:ml-4 sm:mt-5 sm:bottom-auto sm:pb-4"
@@ -46,6 +49,11 @@ import { mapGetters } from "vuex";
 import EpisodeList from "/src/components/episode/EpisodeList.vue";
 export default {
 	components: { EpisodeList },
+	data() {
+		return {
+			isLoading: false,
+		};
+	},
 	methods: {
 		addResource() {
 			this.$router.push({ name: "episodeAdd" });
@@ -57,9 +65,11 @@ export default {
 	computed: {
 		...mapGetters(["isAuthenticated"]),
 	},
-	created() {
+	async created() {
 		if (this.isAuthenticated) {
-			this.$store.dispatch("loadEpisodes");
+			this.isLoading = true;
+			await this.$store.dispatch("loadEpisodes");
+			this.isLoading = false;
 		}
 	},
 };
