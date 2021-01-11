@@ -1,5 +1,7 @@
 <template>
-	<h1 class="text-center font-semibold text-xl pt-10">Log ind</h1>
+	<h1 class="text-center font-semibold text-xl pt-10">
+		{{ submitButtonCaption }}
+	</h1>
 	<form @submit.prevent="submitData" class="p-4 pt-10">
 		<div>
 			<label for="email">Email</label>

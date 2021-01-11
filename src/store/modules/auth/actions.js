@@ -1,5 +1,17 @@
 let timer;
 
+function getErrorMessage(errorType) {
+	if (errorType === "INVALID_PASSWORD") {
+		return "Forkert adgangskode";
+	} else if (errorType === "EMAIL_NOT_FOUND") {
+		return "Kunne ikke finde en bruger med den email";
+	} else if (errorType === "EMAIL_EXISTS") {
+		return "Der findes allerede en bruger med den mail";
+	} else {
+		return null;
+	}
+}
+
 export default {
 	async login(context, payload) {
 		return context.dispatch("auth", {
@@ -29,8 +41,11 @@ export default {
 
 		const data = await response.json();
 
+		console.log(data);
 		if (!response.ok) {
-			const error = new Error(data.messsage || "Failed to authenticate");
+			const error = new Error(
+				getErrorMessage(data.error.message) || "Failed to authenticate"
+			);
 			throw error;
 		}
 
