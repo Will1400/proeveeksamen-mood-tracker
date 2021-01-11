@@ -1,5 +1,5 @@
 <template>
-	<h1 class="text-center font-semibold text-xl pt-10">Login</h1>
+	<h1 class="text-center font-semibold text-xl pt-10">Log ind</h1>
 	<form @submit.prevent="submitData" class="p-4 pt-10">
 		<div>
 			<label for="email">Email</label>
@@ -58,10 +58,10 @@ export default {
 	},
 	computed: {
 		submitButtonCaption() {
-			return this.mode === "login" ? "Login" : "Signup";
+			return this.mode === "login" ? "Log ind" : "Tilmed";
 		},
 		switchModeButtonCaption() {
-			return this.mode === "login" ? "Signup instead" : "Login instead";
+			return this.mode === "login" ? "Tilmed istedet" : "Log ind istedet";
 		},
 	},
 	methods: {
