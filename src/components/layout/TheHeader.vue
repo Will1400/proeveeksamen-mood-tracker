@@ -5,7 +5,7 @@
 		>
 			<div>
 				<router-link :to="{ name: 'episodes' }">
-					<h1 class="text-2xl text-center">Mood Tracker</h1>
+					<h1 class="text-2xl text-center">Mood Tracker Vercel</h1>
 				</router-link>
 			</div>
 			<div>
