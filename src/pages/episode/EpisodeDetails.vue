@@ -77,7 +77,6 @@ export default {
 			}
 
 			const episode = episodes.find((x) => x.id === this.id);
-			console.log(episode);
 
 			return episode;
 		},
@@ -87,7 +86,6 @@ export default {
 	},
 	created() {
 		this.$store.dispatch("loadEpisodes");
-		console.log("loading...");
 	},
 };
 </script>
